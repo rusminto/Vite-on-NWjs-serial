@@ -1,0 +1,18 @@
+@import url("../main.css");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+label.form-label-required {
+	font-weight: 600;
+}
+
+label.form-label-required::after {
+	content: '*';
+	color: #FF0000;
+	font-size: 1.15rem;
+}

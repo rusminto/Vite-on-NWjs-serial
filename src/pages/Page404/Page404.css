@@ -1,0 +1,19 @@
+.page-404 {
+	opacity: 0;
+	transition: var(--opacity-transition);
+
+}
+
+.page-404 .title-404 {
+	font-size: 30vh;
+}
+
+.page-404 .btn {
+	background-color: var(--button-color);
+	font-size: var(--normal-font-size);
+	color: white;
+}
+
+.page-404 h6 {
+	font-size: var(--normal-font-size);
+}

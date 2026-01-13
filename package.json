@@ -1,0 +1,91 @@
+{
+  	"name": "template-vite-nw",
+  	"version": "1.0.0",
+  	"scripts": {
+  	  	"start": "concurrently -k npm:dev:service npm:dev:web npm:dev:desktop",
+  	  	"dev:service": "NODE_ENV=development node service.js",
+  	  	"dev:web": "NODE_ENV=development node ./utils/startWeb.js",
+  	  	"dev:desktop": "wait-on -c waitOnConfig.json http-get://localhost:8888 && NODE_ENV=development nw . --disable-crash-handler=true",
+  	  	"build": "npm run build:clean && npm run build:web && npm run build:nw",
+  	  	"build:clean": "rimraf ./dist",
+  	  	"build:web": "node ./utils/buildWeb.js",
+  	  	"build:nw": "node ./utils/buildNw.js"
+  	},
+  	"devDependencies": {
+  	  	"concurrently": "^9.2.1",
+  	  	"nw": "0.104.0-sdk",
+  	  	"nw-builder": "4.16.2",
+  	  	"rimraf": "^6.1.2",
+  	  	"vite": "^7.0.4",
+  	  	"wait-on": "^9.0.3"
+  	},
+  	"main": "http://localhost:8888",
+  	"node-main": "service.js",
+  	"window": {
+  	  	"width": 960,
+  	  	"height": 600,
+  	  	"min_width": 800,
+  	  	"min_height": 500,
+  	  	"icon": "public/assets/icon/favicon.ico"
+  	},
+  	"js-flags": "--harmony --use_strict --optimize_for_size",
+  	"chromium-args": "--enable_node_worker --mixed-context --disable-pinch --disable-raf-throttling",
+  	"author": "rusminto https://github.com/rusminto",
+  	"license": "MIT",
+	"dependencies": {
+		"express.helper": "git+https://github.com/rusminto/express.helper.git",
+		"common.helper": "git+https://github.com/rusminto/common.helper.git",
+		"serial.helper": "git+https://github.com/rusminto/serial.helper.git"
+	},
+  	"nwBuild": [{
+  		"mode": "build",
+  		"flavor": "sdk",
+  		"version": "0.104.0",
+  		"platform": "linux",
+  		"arch": "x64",
+  		"logLevel": "debug",
+  		"zip": false,
+  		"glob": false,
+  		"srcDir": "./dist/web",
+  		"cacheDir": "./node_modules/nw",
+  		"outDir": "./dist/linux",
+  		"app": {
+  			"name": "template-vite-nw",
+  			"genericName": "template-vite-nw",
+  			"noDisplay": false,
+  			"comment": "Template Vite on NW.js",
+  			"icon": "public/assets/icon/favicon.ico",
+  			"version": "1.0.0",
+  			"hidden": false,
+  			"dBusActivatable": true,
+  			"exec": "./dist/linux/template-vite-nw"
+  		}
+  	},{
+  		"mode": "build",
+  		"flavor": "sdk",
+		"version": "0.104.0",
+  		"platform": "win",
+  		"arch": "x64",
+  		"logLevel": "debug",
+  		"zip": false,
+  		"glob": false,
+  		"srcDir": "./dist/web",
+  		"cacheDir": "./node_modules/nw",
+  		"outDir": "./dist/win",
+  		"app": {
+  			"name": "template-vite-nw",
+  			"comment": "Template Vite on NW.js",
+  			"icon": "public/assets/icon/favicon.ico",
+  			"version": "1.0.0",
+  			"company": "My Templates",
+  			"fileDescription": "Template Vite on NW.js",
+  			"fileVersion": "1.0.0",
+  			"internalName": "template-vite-nw",
+  			"legalCopyright": "Copyright (c) 2025 My Templates",
+  			"originalFilename": "template-vite-nw",
+  			"productName": "template-vite-nw",
+  			"productVersion": "0.0.0"
+  		}
+  	}
+  	]
+}
