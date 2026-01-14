@@ -1,6 +1,6 @@
 # Vite on NW.js Template
 
-https://github.com/user-attachments/assets/a15261e5-4ecd-4628-af6e-023650715da7
+https://github.com/user-attachments/assets/ce7920bb-db49-497d-b288-ba38ae96f163
 
 This is a template for building desktop applications using [NW.js](https://nwjs.io/) and [Vite](https://vitejs.dev/). It provides a basic setup to get you started with developing your application with a fast development and an efficient build process.
 
