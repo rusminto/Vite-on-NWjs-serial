@@ -1,5 +1,7 @@
 # Vite on NW.js Template
 
+https://github.com/user-attachments/assets/a15261e5-4ecd-4628-af6e-023650715da7
+
 This is a template for building desktop applications using [NW.js](https://nwjs.io/) and [Vite](https://vitejs.dev/). It provides a basic setup to get you started with developing your application with a fast development and an efficient build process.
 
 This template is inspired by [nw-vue3-boilerplate](https://github.com/nwutils/nw-vue3-boilerplate) , but it is framework-agnostic and uses only Vite for the web part.
